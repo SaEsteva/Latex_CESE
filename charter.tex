@@ -104,18 +104,18 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-En la industria Química existen procesos continuos de fabricación los cuales deben ser controlados de forma permanente para asegurar una calidad constante entre lotes de un mismo producto. Para ello se implementan técnicas de mantenimiento predictivo intentando prevenir problemas que llevan a paros de emergencia o tiempos muertos en el proceso provocando una perdida parcial o total del lote concluyendo en un impacto financiero negativo.
-Dado que en la mayoría de estos procesos se utilizan motores eléctricos como actuadores, se abre una gran posibilidad de desarrollar diversos tipos de sensores para aplicar mantenimiento predictivo. En la bibliografía se puede encontrar diversos métodos relacionados a evaluar el desgaste de un motor mediante el análisis de la corriente de consumo del mimo, es por ello que se plantea desarrollar un sensor de corriente capaz de medir, procesar y comparar datos estadísticos en dominio del tiempo y frecuencia.
+En la industria Química existen procesos continuos de fabricación los cuales deben ser controlados de forma permanente para asegurar una calidad constante entre lotes de un mismo producto. Sumado a los controles en tiempo de ejecución, existen técnicas de mantenimiento predictivo que permiten prever posibles fallas en los actuadores del proceso que implican paros de emergencia o tiempos muertos, concluyendo en perdidas parciales o totales del lote.
+Dado que en la mayoría de estos procesos se utilizan motores eléctricos como actuadores, se abre una gran posibilidad de desarrollar diversos tipos de sensores para aplicar mantenimiento predictivo. En la bibliografía se pueden encontrar diversos métodos relacionados a evaluar el desgaste de un motor mediante el análisis de la corriente de consumo del mismo, es por ello que la empresa \empclientename necesita un sensor de corriente capaz de medir, procesar y comparar datos estadísticos en dominio del tiempo y frecuencia.
 
-La empresa Hitec SRl cuanta con un servicio de mantenimiento predictivo mediante la plataforma comercial \textit{teBox} de terative con análisis y reportes en la nube y se encuentra en la búsqueda de un sensor de corriente que se adapte a la plataforma. Por este motivo el presente proyecto busca desarrollar un sensor de corriente trifásico capaz de medir, procesar, almacenar y comunicar parámetros específicos a traves de dicha plataforma.
+Actualmente la empresa presta un servicio de mantenimiento predictivo mediante la plataforma comercial \textit{teBox} de terative con análisis y reportes de datos en la nube y se encuentra en la búsqueda de un sensor de corriente que se adecúe a dicha plataforma. El presente proyecto busca cubrir esta necesidad y propone desarrollar un sensor de corriente trifásico capaz de medir, procesar, almacenar y comunicar parámetros específicos a través de la plataforma \textit{teBox}.
 
-En la Fig \ref{fig:diagBloques} se presenta un diagrama en bloques del sensor de corriente trifásico que se propone desarrollar. se debe ADFADF
+En la Fig \ref{fig:diagBloques} se presenta un diagrama en bloques del sensor que se propone desarrollar. Se observa la unidad central de procesamiento con sus periféricos, los circuitos necesarios para la adaptación de señales, alimentación y comunicación y los 4 sensores externos.
 
 \vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.7\textwidth]{./Figuras/diagBloque.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
@@ -135,46 +135,8 @@ El sensor debe medir los siguiente parámetros:
 
 Adicionalmente deberá procesar cada señal en frecuencia con la capacidad de extraer la frecuencia de máxima energía y energía de bandas predefinidas, contener una memoria externa para almacenar datos relacionados a valores de calibración de fábrica, valores de última calibración, máximos históricos de algunas variables de interés, fecha de cada dato almacenado, etc.
 
-
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un\\
- lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
-
-
-El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
-\end{consigna}
-
-
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
- 
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
-
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
-
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -183,35 +145,20 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante y & \clientename      &\empclientename	&        	\\
+Cliente		  &			   		  &					&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & Martin Mello Teggia & FIUBA        	& Alumno 	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Personal técnico o & \empclientename   	& Técnico       	\\ 
+				& capacitado &              	&        	\\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Sería deseable listar a continuación de la tabla las principales características de cada interesado.
  
-Por ejemplo:
 \begin{itemize}
-\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-\item Orientador: María Gómez, nos va a poder ayudar mucho con la gestión de impuestos.
+\item Colaborador: Martín Mello Teggia, empleado de la empresa \empclientename  y estudiante de la especialización con gran experiencia en diseño de hardware y software.
 \end{itemize}
 
-\end{consigna}
 
 
 
@@ -228,14 +175,13 @@ El proyecto incluye los siguientes puntos:
 \item El diseño e implementación del hardware.
 \item El desarrollo del firmware capaz de recolectar los datos, procesarlos y enviarlos mediante el protocolo de comunicación específico de \textit{teBox} en modelo maestro-esclavo.
 \item Sensado de temperatura ambiental para conocer el modo de operación.
-\item 
+\item Desarrollo de una Memoria técnica del proyecto.
 \end{itemize}
 
 El proyecto no incluye los siguientes puntos:
 \begin{itemize}
 \item El diseño y construcción de packaging asociado para la distribución del producto.
 \item El análisis de los datos recolectados y procesados.
-\item 
 \end{itemize}
 
 \section{3. Supuestos del proyecto}
@@ -244,10 +190,10 @@ El proyecto no incluye los siguientes puntos:
 Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-\item Todos los materiales necesarios para la implementación serán suministrados por Hictec SRL.
+\item Todos los materiales necesarios para la implementación serán suministrados por \empclientename.
 \item La importación de componentes no estará restringida y tomará un tiempo menor a 3 meses.
-\item Se contará con asistencia por parte de Hitec SRL para el montaje de los componentes en el PCB.
-\item Hitec SRL cuenta con todos los equipos para la medición y validación del prototipo.
+\item Se contará con asistencia por parte de \empclientename para el montaje de los componentes en el PCB.
+\item \empclientename cuenta con todos los equipos para la medición y validación del prototipo.
 \end{itemize}
 
 
@@ -259,21 +205,25 @@ A continuación se listan los requerimientos en prioridad descendente:
 \begin{enumerate}
 \item Grupo de requerimientos asociados al sistema
 	\begin{enumerate}
-	\item La alimentación debe ser de 5V con un consumo máximo de 200 mA.
-	\item 
-	\item Requerimiento 3 (prioridad menor)
+	\item La alimentación debe ser de 5 V con un consumo máximo de 200 mA.
+	\item El sistema utilizará sensores disponibles comercialmente para la adquisición de la corriente y temperatura.
+	\item El sistema deberá ser capaz de tomar muestras de los tres sensores de corriente en simultaneo al período de muestreo fijo.
+	\item El sistema deberá poseer una memoria no volátil para registrar datos como valores máximos, parámetros de calibración, etc. 
+	\item El sistema debe medir la temperatura ambiental de operación.
+	\item El sistema incorporará diseño y elementos que aseguren bajo consumo de energía.
+	\item Los indicadores de situación serán enviados mediante el protocolo de comunicación.
 	\end{enumerate}
-\item Grupo de requerimientos asociados con la comunicación
+\item Grupo de requerimientos asociados a la comunicación de datos
 	\begin{enumerate}
-	\item El protocolo está definido por la plataforma \textit{teBox}.
+	\item El protocolo de comunicación está definido por la plataforma \textit{teBox}.
 	\item El sensor se comporta como esclavo y la plataforma \textit{teBox} como maestro.
-	\item Requerimiento 2 (prioridad menor)
 	\end{enumerate}
-\item Grupo de requerimientos asociados con las variables sensadas
+\item Grupo de requerimientos asociados con el sensor de corriente
 	\begin{enumerate}
-	\item El protocolo está definido por la plataforma \textit{teBox}.
-	\item El sensor se comporta como esclavo y la plataforma \textit{teBox} como maestro.
-	\item Requerimiento 2 (prioridad menor)
+	\item El sensor debe ser de efecto Hall.
+	\item El sensor debe detectar corriente continua, alterna y de pulsos.
+	\item El sensor debe ser de núcleo partido.
+	\item El sensor debe ser de bajo consumo.
 	\end{enumerate}
 \end{enumerate}
 
@@ -288,53 +238,63 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Cosas como: 
 \begin{itemize}
+\item Prototipo funcional
 \item Manual de uso
 \item Diagrama esquemático
 \item Código fuente
-\item Diagrama de instalación
+\item Manual de instalación
 \item Informe final
 
 \end{itemize}
 
-\end{consigna}
 
 \section{6. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Análisis preliminar (48 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Estudio sobre mantenimiento predictivo (10 hs)
+	\item Investigación sobre posibles sensores de corriente (10 hs)
+	\item Realizar el plan del proyecto (28 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Hardware (140 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Selección de componentes (12 hs)
+	\item Diseño del esquemático (28 hs)
+	\item Diseño del PCB (30 hs)
+	\item Fabricación y ensamblado del PCB (30 hs)
+	\item Pruebas y validación del hardware (40 hs)
 	\end{enumerate}
-	\item Grupo de tareas 3
+\item Firmware (154 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Desarrollo de arquitectura del firmware  (16 hs)
+	\item Diseño de firmware (32 hs)
+	\item Análisis de riesgos de firmware (10 hs)
+	\item Desarrollo de pruebas para firmware (32 hs)
+	\item Programación del firmware (40 hs)
+	\item Verificación y validación del firmware (24 hs)
+	\end{enumerate}
+\item Integración (157 hs)
+	\begin{enumerate}
+	\item Integración de los módulos constitutivos (32 hs)
+	\item Pruebas de sensado (30 hs)
+	\item Pruebas de almacenamiento de datos(30 hs)
+	\item Pruebas de comunicación(30 hs)	
+	\item Corrección de errores (35 hs)
+	\end{enumerate}
+\item Procesos finales (104 hs)
+	\begin{enumerate}
+	\item Elaboración del informe de avance (15 hs)
+	\item Evaluación de requerimientos (25 hs)
+	\item Elaboración de la memoria del proyecto (30 hs)
+	\item Preparación de la presentación final (34 hs)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+Cantidad total de horas: 603 hs
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
 
 \section{7. Diagrama de Activity On Node}
 \label{sec:AoN}
