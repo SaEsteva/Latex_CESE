@@ -14,7 +14,7 @@
 \autor{Santiago Esteva} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
+\director{Bucafusco Franco}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{} % si queda vacio no se deberíá incluir 
@@ -63,11 +63,8 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 23/10/2020 \\ \hline
-1.1      & Avances en alguna cosa                                          & dd/mm/aaaa \\ \hline
-1.2      & Otro ejemplo \newline
-		   Con texto partido \newline
-		   En varias líneas \newline
-		   A propósito                                                     & dd/mm/aaaa \\ \hline
+1.1      & Desarrollo hasta sección 6 inclusive                            & 05/11/2020 \\ \hline
+      &                                                   &  \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -84,7 +81,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un desarrollo de un sensor de corriente de tres fases capaz de medir, procesar e informar diversos parámetros necesarios para el mantenimiento predictivo en la industria, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un desarrollo de un sensor de corriente de tres fases capaz de medir, procesar e informar diversos parámetros necesarios para el mantenimiento predictivo en la industria, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,22 +104,12 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+En la industria Química existen procesos continuos de fabricación los cuales deben ser controlados de forma permanente para asegurar una calidad constante entre lotes de un mismo producto. Para ello se implementan técnicas de mantenimiento predictivo intentando prevenir problemas que llevan a paros de emergencia o tiempos muertos en el proceso provocando una perdida parcial o total del lote concluyendo en un impacto financiero negativo.
+Dado que en la mayoría de estos procesos se utilizan motores eléctricos como actuadores, se abre una gran posibilidad de desarrollar diversos tipos de sensores para aplicar mantenimiento predictivo. En la bibliografía se puede encontrar diversos métodos relacionados a evaluar el desgaste de un motor mediante el análisis de la corriente de consumo del mimo, es por ello que se plantea desarrollar un sensor de corriente capaz de medir, procesar y comparar datos estadísticos en dominio del tiempo y frecuencia.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+La empresa Hitec SRl cuanta con un servicio de mantenimiento predictivo mediante la plataforma comercial \textit{teBox} de terative con análisis y reportes en la nube y se encuentra en la búsqueda de un sensor de corriente que se adapte a la plataforma. Por este motivo el presente proyecto busca desarrollar un sensor de corriente trifásico capaz de medir, procesar, almacenar y comunicar parámetros específicos a traves de dicha plataforma.
 
-\begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En la Fig \ref{fig:diagBloques} se presenta un diagrama en bloques del sensor de corriente trifásico que se propone desarrollar. se debe ADFADF
 
 \vspace{25px}
 
@@ -134,6 +121,39 @@ La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en
 \end{figure}
 
 \vspace{25px}
+
+
+El sensor debe medir los siguiente parámetros:
+\begin{itemize}
+\item Desplazamiento entre las 3 fases
+\item Valor estadístico (por fase) de Corriente RMS AC 
+\item Valor estadístico (por fase) de Corriente DC
+\item Valor estadístico (por fase) de Factor de cresta
+\item Valor pico de la corriente
+\end{itemize}
+
+
+Adicionalmente deberá procesar cada señal en frecuencia con la capacidad de extraer la frecuencia de máxima energía y energía de bandas predefinidas, contener una memoria externa para almacenar datos relacionados a valores de calibración de fábrica, valores de última calibración, máximos históricos de algunas variables de interés, fecha de cada dato almacenado, etc.
+
+
+\begin{consigna}{red}
+El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
+Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+
+Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+
+\begin{itemize}
+\item ¿Cómo se vincula este proyecto con la misión de la organización?
+\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
+\item ¿Ayuda a la explicación si se incluye un\\
+ lienzo Canvas del Modelo de Negocio?
+\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
+\item ¿Cuales son las necesidades que debe satisfacer?
+\item ¿Por dónde pasa la innovación?
+\end{itemize}
+
+La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+
 
 El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
 \end{consigna}
@@ -198,77 +218,65 @@ Por ejemplo:
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+El propósito de este proyecto es desarrollar un sensor de corriente de tres fases capaz de medir, procesar e informar diversos parámetros necesarios para el mantenimiento predictivo en la industria Química.
 
 \section{2. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El proyecto incluye los siguientes puntos:
+\begin{itemize}
+\item El diseño e implementación del hardware.
+\item El desarrollo del firmware capaz de recolectar los datos, procesarlos y enviarlos mediante el protocolo de comunicación específico de \textit{teBox} en modelo maestro-esclavo.
+\item Sensado de temperatura ambiental para conocer el modo de operación.
+\item 
+\end{itemize}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
-
+El proyecto no incluye los siguientes puntos:
+\begin{itemize}
+\item El diseño y construcción de packaging asociado para la distribución del producto.
+\item El análisis de los datos recolectados y procesados.
+\item 
+\end{itemize}
 
 \section{3. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-\item Supuesto 1
-\item Supuesto 2...
+\item Todos los materiales necesarios para la implementación serán suministrados por Hictec SRL.
+\item La importación de componentes no estará restringida y tomará un tiempo menor a 3 meses.
+\item Se contará con asistencia por parte de Hitec SRL para el montaje de los componentes en el PCB.
+\item Hitec SRL cuenta con todos los equipos para la medición y validación del prototipo.
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{4. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible agruparlos por afinidad:
+A continuación se listan los requerimientos en prioridad descendente:
 
 \begin{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Grupo de requerimientos asociados al sistema
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2
+	\item La alimentación debe ser de 5V con un consumo máximo de 200 mA.
+	\item 
 	\item Requerimiento 3 (prioridad menor)
 	\end{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Grupo de requerimientos asociados con la comunicación
 	\begin{enumerate}
-	\item Requerimiento 1
+	\item El protocolo está definido por la plataforma \textit{teBox}.
+	\item El sensor se comporta como esclavo y la plataforma \textit{teBox} como maestro.
+	\item Requerimiento 2 (prioridad menor)
+	\end{enumerate}
+\item Grupo de requerimientos asociados con las variables sensadas
+	\begin{enumerate}
+	\item El protocolo está definido por la plataforma \textit{teBox}.
+	\item El sensor se comporta como esclavo y la plataforma \textit{teBox} como maestro.
 	\item Requerimiento 2 (prioridad menor)
 	\end{enumerate}
 \end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-De ser posible indicar cómo se obtuvieron cada uno de los requerimientos 
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-\item Ser breve y conciso (nadie lee cosas largas). 
-\item Ser específico: no dejar lugar a confusiones.
-\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
