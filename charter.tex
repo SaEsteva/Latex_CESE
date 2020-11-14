@@ -11,11 +11,11 @@
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Santiago Esteva} 
+\autor{Ing. Santiago Esteva} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Bucafusco Franco}
-\pertenenciaDirector{pertenencia} 
+\director{Esp. Ing. Bucafusco Franco}
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{} % si queda vacio no se deberíá incluir 
 \pertenenciaCoDirector{}
@@ -64,6 +64,7 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 23/10/2020 \\ \hline
 1.1      & Desarrollo hasta sección 6 inclusive                            & 05/11/2020 \\ \hline
+1.2      & Correcciones e historias de usuario                            & 15/11/2020 \\ \hline
       &                                                   &  \\ \hline
 \end{tabularx}
 \end{table}
@@ -104,18 +105,18 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-En la industria Química existen procesos continuos de fabricación los cuales deben ser controlados de forma permanente para asegurar una calidad constante entre lotes de un mismo producto. Sumado a los controles en tiempo de ejecución, existen técnicas de mantenimiento predictivo que permiten prever posibles fallas en los actuadores del proceso que implican paros de emergencia o tiempos muertos, concluyendo en perdidas parciales o totales del lote.
-Dado que en la mayoría de estos procesos se utilizan motores eléctricos como actuadores, se abre una gran posibilidad de desarrollar diversos tipos de sensores para aplicar mantenimiento predictivo. En la bibliografía se pueden encontrar diversos métodos relacionados a evaluar el desgaste de un motor mediante el análisis de la corriente de consumo del mismo, es por ello que la empresa \empclientename necesita un sensor de corriente capaz de medir, procesar y comparar datos estadísticos en dominio del tiempo y frecuencia.
+En la industria química existen procesos continuos de fabricación que deben ser controlados de forma permanente para asegurar una calidad constante entre lotes de un mismo producto. Sumado a los controles en tiempo de ejecución, existen técnicas de mantenimiento predictivo que permiten prever posibles fallas en los actuadores del proceso que implican paros de emergencia o tiempos muertos, que concluyen en pérdidas parciales o totales del lote.
+Dado que en la mayoría de estos procesos se utilizan motores eléctricos como actuadores, se abre una gran posibilidad de desarrollar diversos tipos de sensores para aplicar mantenimiento predictivo. En la bibliografía se pueden encontrar diversos métodos relacionados a evaluar el desgaste de un motor mediante el análisis de su corriente de consumo. Es por ello que la empresa \empclientename necesita un sensor de corriente capaz de medir, procesar y comparar datos estadísticos en dominio del tiempo y frecuencia.
 
-Actualmente la empresa presta un servicio de mantenimiento predictivo mediante la plataforma comercial \textit{teBox} de terative con análisis y reportes de datos en la nube y se encuentra en la búsqueda de un sensor de corriente que se adecúe a dicha plataforma. El presente proyecto busca cubrir esta necesidad y propone desarrollar un sensor de corriente trifásico capaz de medir, procesar, almacenar y comunicar parámetros específicos a través de la plataforma \textit{teBox}.
+Actualmente la empresa presta un servicio de mantenimiento predictivo mediante la plataforma comercial \textit{teBox} de la firma Terative, con análisis y reportes de datos en la nube y se encuentra en la búsqueda de un sensor de corriente que se adecúe a su plataforma. El presente proyecto busca cubrir esta necesidad y propone desarrollar un sensor de corriente trifásico capaz de medir, procesar, almacenar y comunicar parámetros específicos a través de la plataforma \textit{teBox}.
 
-En la Fig \ref{fig:diagBloques} se presenta un diagrama en bloques del sensor que se propone desarrollar. Se observa la unidad central de procesamiento con sus periféricos, los circuitos necesarios para la adaptación de señales, alimentación y comunicación y los 4 sensores externos.
+En la figura \ref{fig:diagBloques} se presenta un diagrama en bloques del sensor que se propone desarrollar con el nombre comercial de teSensor-TC (\textit{Trifasic Current Sensor}) . Se observa la unidad central de procesamiento con sus periféricos, los circuitos necesarios para la adaptación de señales, alimentación y comunicación y los cuatro sensores externos.
 
 \vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloque.png}
+\includegraphics[width=.9\textwidth]{./Figuras/diagBloque.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
@@ -125,10 +126,10 @@ En la Fig \ref{fig:diagBloques} se presenta un diagrama en bloques del sensor qu
 
 El sensor debe medir los siguiente parámetros:
 \begin{itemize}
-\item Desplazamiento entre las 3 fases
-\item Valor estadístico (por fase) de Corriente RMS AC 
-\item Valor estadístico (por fase) de Corriente DC
-\item Valor estadístico (por fase) de Factor de cresta
+\item Desplazamiento entre las tres fases
+\item Valor estadístico (por fase) de corriente RMS AC 
+\item Valor estadístico (por fase) de corriente DC
+\item Valor estadístico (por fase) de factor de cresta
 \item Valor pico de la corriente
 \end{itemize}
 
@@ -150,8 +151,8 @@ Cliente		  &			   		  &					&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores & Martin Mello Teggia & FIUBA        	& Alumno 	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
-Usuario final & Personal técnico o & \empclientename   	& Técnico       	\\ 
-				& capacitado &              	&        	\\ \hline
+Usuario final & Personal técnico del & \empclientename   	& Técnico       	\\ 
+				& sector de instalaciones &              	&        	\\ \hline
 \end{tabularx}
 \end{table}
  
@@ -165,7 +166,7 @@ Usuario final & Personal técnico o & \empclientename   	& Técnico       	\\
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
-El propósito de este proyecto es desarrollar un sensor de corriente de tres fases capaz de medir, procesar e informar diversos parámetros necesarios para el mantenimiento predictivo en la industria Química.
+El propósito de este proyecto es desarrollar un sensor de corriente de tres fases capaz de medir, procesar e informar diversos parámetros necesarios para el mantenimiento predictivo en la industria química.
 
 \section{2. Alcance del proyecto}
 \label{sec:alcance}
@@ -175,7 +176,7 @@ El proyecto incluye los siguientes puntos:
 \item El diseño e implementación del hardware.
 \item El desarrollo del firmware capaz de recolectar los datos, procesarlos y enviarlos mediante el protocolo de comunicación específico de \textit{teBox} en modelo maestro-esclavo.
 \item Sensado de temperatura ambiental para conocer el modo de operación.
-\item Desarrollo de una Memoria técnica del proyecto.
+\item Desarrollo de una memoria técnica del proyecto.
 \end{itemize}
 
 El proyecto no incluye los siguientes puntos:
@@ -192,12 +193,12 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
 \item Todos los materiales necesarios para la implementación serán suministrados por \empclientename.
 \item La importación de componentes no estará restringida y tomará un tiempo menor a 3 meses.
-\item Se contará con asistencia por parte de \empclientename para el montaje de los componentes en el PCB.
-\item \empclientename cuenta con todos los equipos para la medición y validación del prototipo.
+\item Se contará con asistencia por parte de \empclientename \space para el montaje de los componentes en el PCB.
+\item \empclientename \space cuenta con todos los equipos para la medición y validación del prototipo.
 \end{itemize}
 
 
-\section{4. Requerimientos}
+\section{4. Requerimientos de testing}
 \label{sec:requerimientos}
 
 A continuación se listan los requerimientos en prioridad descendente:
@@ -205,12 +206,12 @@ A continuación se listan los requerimientos en prioridad descendente:
 \begin{enumerate}
 \item Grupo de requerimientos asociados al sistema
 	\begin{enumerate}
-	\item La alimentación debe ser de 5 V con un consumo máximo de 200 mA.
+	\item La alimentación por cable debe ser de 5 V con un consumo máximo de 200 mA. \label{req1}
 	\item El sistema utilizará sensores disponibles comercialmente para la adquisición de la corriente y temperatura.
 	\item El sistema deberá ser capaz de tomar muestras de los tres sensores de corriente en simultaneo al período de muestreo fijo.
 	\item El sistema deberá poseer una memoria no volátil para registrar datos como valores máximos, parámetros de calibración, etc. 
-	\item El sistema debe medir la temperatura ambiental de operación.
-	\item El sistema incorporará diseño y elementos que aseguren bajo consumo de energía.
+	\item El sistema debe medir la temperatura ambiental de operación, rango de medición 0 - 50 centígrados.
+	\item El sistema incorporará diseño y elementos que aseguren bajo consumo de energía (requerimiento \ref{req1}).
 	\item Los indicadores de situación serán enviados mediante el protocolo de comunicación.
 	\end{enumerate}
 \item Grupo de requerimientos asociados a la comunicación de datos
@@ -223,7 +224,7 @@ A continuación se listan los requerimientos en prioridad descendente:
 	\item El sensor debe ser de efecto Hall.
 	\item El sensor debe detectar corriente continua, alterna y de pulsos.
 	\item El sensor debe ser de núcleo partido.
-	\item El sensor debe ser de bajo consumo.
+	\item El sensor debe ser de bajo consumo (máximo 20 mA).
 	\end{enumerate}
 \end{enumerate}
 
@@ -241,7 +242,7 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 \begin{itemize}
 \item Prototipo funcional
 \item Manual de uso
-\item Diagrama esquemático
+\item Diagrama esquemático electrónico del hardware
 \item Código fuente
 \item Manual de instalación
 \item Informe final
@@ -262,7 +263,7 @@ Descripción: En esta sección se deben incluir las historias de usuarios y su p
 \item Hardware (140 hs)
 	\begin{enumerate}
 	\item Selección de componentes (12 hs)
-	\item Diseño del esquemático (28 hs)
+	\item Diseño del circuito esquemático (28 hs)
 	\item Diseño del PCB (30 hs)
 	\item Fabricación y ensamblado del PCB (30 hs)
 	\item Pruebas y validación del hardware (40 hs)
