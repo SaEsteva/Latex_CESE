@@ -339,7 +339,7 @@ En la Figura \ref{fig:AoN} se observa el diagrama de \textit{Activity on Node} c
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
 
-En la figura \ref{fig:gantt} se muesta el diagrama de gantt correspondiente a las tareas detalladas en el cuadro \ref{tab:gantt}. Se toma un calendario con 5 días laborales por semana y se estima un trabajo de 20 horas semanales dividido en 4s horas diarias.
+En la figura \ref{fig:gantt} se muestra el diagrama de gantt correspondiente a las tareas detalladas en el cuadro. Se toma un calendario con 5 días laborales por semana y se estima un trabajo de veinte horas semanales dividido en cuatro horas diarias.
 
 \begin{table}[htpb]
 \centering
@@ -351,13 +351,13 @@ Tarea & Nombre & Duración & Inicio & Final & Predecesor \\ \hline
 2 & Estudio sobre mantenimiento predictivo &  10 hs & 10/23/2020 & 	10/26/2020	 &\\ \hline
 3 & Investigación sobre posibles sensores de corriente &  10 hs & 10/23/2020 & 10/26/2020	 & \\ \hline
 4 & Realizar el plan del proyecto &  28 hs & 10/27/2020 & 	10/30/2020 & 2, 3 \\ \hline		
-5 & Hardware &  45.4 dias & 11/04/2020 & 	12/04/2020 & 1\\ \hline
+5 & Hardware &  45.4 días & 11/04/2020 & 	12/04/2020 & 1\\ \hline
 6 & Selección de componentes &  12 hs & 11/04/2020 & 	11/05/2020 & 4\\ \hline
 7 & Diseño del circuito esquemático &  28 hs & 11/06/2020 & 	11/11/2020	 &6\\ \hline
 8 & Diseño del PCB &  30 hs & 11/16/2020 & 	11/19/2020 &7\\ \hline
 9 & Fabricación y ensamblado del PCB &  30 hs & 11/24/2020 & 	11/27/2020	 & 8\\ \hline
 10 & Pruebas y validación del hardware &  40 hs & 11/27/2020 & 	12/04/2020	 & 9	\\ \hline
-11 & Firmware &  38.5 dias &11/05/2020	 & 12/02/2020 &  1\\ \hline
+11 & Firmware &  38.5 días &11/05/2020	 & 12/02/2020 &  1\\ \hline
 12 & Desarrollo de arquitectura del firmware &   16 hs & 11/05/2020 & 	11/06/2020 & 4\\ \hline
 13 & Diseño de firmware &  32 hs & 11/09/2020 & 	11/12/2020 & 12\\ \hline
 14 & Análisis de riesgos de firmware &  10 hs & 11/13/2020 & 	11/16/2020 & 13\\ \hline
@@ -370,20 +370,25 @@ Tarea & Nombre & Duración & Inicio & Final & Predecesor \\ \hline
 21 & Pruebas de almacenamiento de datos & 30 hs & 12/10/2020 & 	12/16/2020 &19\\ \hline
 22 & Pruebas de comunicación & 30 hs & 12/10/2020 & 	12/16/2020 & 19\\ \hline
 23 & Corrección de errores &  35 hs & 12/16/2020 & 	12/22/2020 &20, 21, 22\\ \hline
-24 & Procesos finales &  77.75 dias & 11/10/2020 & 	01/01/2021 & \\ \hline
+24 & Procesos finales &  77.75 días & 11/10/2020 & 	01/01/2021 & \\ \hline
 25 & Elaboración del informe de avance &  15 hs & 11/10/2020 & 	11/11/2020 & 4\\ \hline
 26 & Evaluación de requerimientos &  25 hs & 11/11/2020 & 	11/16/2020 & 4\\ \hline
 27 & Elaboración de la memoria del proyecto &  30 hs & 12/22/2020 & 	12/28/2020 & 23, 25, 26\\ \hline
 28 & Preparación de la presentación final &  34 hs &12/28/2020 & 	01/01/2021 &  27\\ 
 \hline
 \end{tabularx}%
-\caption{Tareas del diagrama de gantt}
 \label{tab:gantt}
 \end{table}
 
 \begin{figure}[htpb]
+\begin{subfigure}[b]{1\textwidth}
 \centering 
-\includegraphics[width=1.4\textwidth, angle =90 ]{./Figuras/gant.png}
+\includegraphics[width=.93\textwidth]{./Figuras/gant.png}
+\end{subfigure}
+\begin{subfigure}[b]{1\textwidth}
+\centering 
+\includegraphics[width=.93\textwidth]{./Figuras/gant2.png}
+\end{subfigure}
 \caption{Diagrama de gantt}
 \label{fig:gantt}
 \end{figure}
@@ -391,7 +396,7 @@ Tarea & Nombre & Duración & Inicio & Final & Predecesor \\ \hline
 \section{9. Matriz de uso de recursos de materiales}
 \label{sec:recursos}
 
-\begin{table}
+\begin{table}[H]
 \label{tab:recursos1}
 \centering
 \begin{tabularx}{\linewidth}{@{}|c|X|c|c|c|c|@{}}
@@ -421,23 +426,12 @@ Tarea & Nombre & Duración & Inicio & Final & Predecesor \\ \hline
 5.2 & Evaluación de requerimientos & 25 &  &  &  \\ \hline
 5.3 & Elaboración de la memoria del proyecto & 30 &  &  &  \\ \hline
 5.4 & Preparación de la presentación final & 34 &  &  &  \\ \hline
-\end{tabularx}%
+\end{tabularx}
 \end{table}
 
-
+\newpage
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
-
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
 
 \begin{table}[htpb]
 \centering
@@ -460,14 +454,14 @@ Descripción &
   \multicolumn{1}{c|}{\$ 7.500} \\ \hline
 \multicolumn{1}{|l|}{Materiales del prototipo} &
    \multicolumn{1}{c|}{2}&
-   \multicolumn{1}{c|}{\$ 50.000}&
-   \multicolumn{1}{c|}{\$ 100.000}\\ \hline
+   \multicolumn{1}{c|}{\$ 10.000}&
+   \multicolumn{1}{c|}{\$ 20.000}\\ \hline
 \multicolumn{1}{|l|}{Fabricación de PCB} &
    \multicolumn{1}{c|}{2}&
-   \multicolumn{1}{c|}{\$ 20.000}&
-   \multicolumn{1}{c|}{\$ 80.000}\\ \hline
+   \multicolumn{1}{c|}{\$ 2.000}&
+   \multicolumn{1}{c|}{\$ 4.000}\\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$ XX.000} \\ \hline
+  \multicolumn{1}{c|}{\$ 303.675} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -477,29 +471,29 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
 \multicolumn{1}{|l|}{45 \% del costo directo} &
    \multicolumn{1}{c|}{1}&
-   \multicolumn{1}{c|}{\$ XXX.000}&
-   \multicolumn{1}{c|}{\$ XXX.000} \\ \hline
-\multicolumn{1}{|l|}{} &
-   \multicolumn{1}{c|}{}&
-   \multicolumn{1}{c|}{\$ }&
-   \multicolumn{1}{c|}{\$ } \\ \hline
-\multicolumn{1}{|l|}{} &
-   \multicolumn{1}{c|}{}&
-   \multicolumn{1}{c|}{\$ }&
-   \multicolumn{1}{c|}{\$ } \\ \hline
+   \multicolumn{1}{c|}{\$ 136.600}&
+   \multicolumn{1}{c|}{\$ 136.600} \\ \hline
+\multicolumn{1}{|l|}{Impuestos materiales 10 \%} &
+   \multicolumn{1}{c|}{1}&
+   \multicolumn{1}{c|}{\$ 1200}&
+   \multicolumn{1}{c|}{\$ 1200} \\ \hline
+\multicolumn{1}{|l|}{Envio material y PCB} &
+   \multicolumn{1}{c|}{1}&
+   \multicolumn{1}{c|}{\$ 5000}&
+   \multicolumn{1}{c|}{\$ 5000} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{\$ XX.000} \\ \hline
+  \multicolumn{1}{c|}{\$ 142.800} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
- \multicolumn{1}{c|}{\$ XX.000}  \\ \hline
+ \multicolumn{1}{c|}{\$ 446.475}  \\ \hline
 \end{tabularx}%
 \end{table}
 
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
-\begin{consigna}{red}
-Establecer la matriz de asignación de responsabilidades y el manejo de la autoridad completando la siguiente tabla:
+
+En la siguiente tabla se asignan las responsabilidades y el manejo de la autoridad.
 
 \begin{table}[htpb]
 \centering
@@ -524,29 +518,29 @@ Establecer la matriz de asignación de responsabilidades y el manejo de la autor
   \supname &
   Martín Mello Teggia &
   \clientename \\ \hline
-1.1 & Estudio sobre mantenimiento predictivo& 10 &  &  &  \\ \hline
-1.2 & Investigación sobre posibles sensores de corriente& 10 &  &  &  \\ \hline
-1.3 & Realizar el plan del proyecto& 28 &  &  &  \\ \hline
-2.1 & Selección de componentes& 12 &  &  &  \\ \hline
-2.2 & Diseño del circuito esquemático& 28 &  &  &  \\ \hline
-2.3 & Diseño del PCB & 30 &  &  &  \\ \hline
-2.4 & Fabricación y ensamblado del PCB &  & 30 &  &  \\ \hline
-2.5 & Pruebas y validación del hardware &  &  & 40 &  \\ \hline
-3.1 & Desarrollo de arquitectura del firmware  & 16 &  &  &  \\ \hline
-3.2 & Diseño de firmware & 32 &  &  &  \\ \hline
-3.3 & Análisis de riesgos de firmware & 10 &  &  &  \\ \hline
-3.4 & Desarrollo de pruebas para firmware & 32 &  &  &  \\ \hline
-3.5 & Programación del firmware &  &  &  & 40 \\ \hline
-3.6 & Verificación y validación del firmware &  &  &  & 24 \\ \hline
-4.1 & Integración de los módulos constitutivos &  &  &  & 32 \\ \hline
-4.2 & Pruebas de sensado &  &  & 20 & 10 \\ \hline
-4.3 & Pruebas de almacenamiento de datos&  &  &  & 30 \\ \hline
-4.4 & Pruebas de comunicación &  &  &  & 30 \\ \hline
-4.5 & Corrección de errores & 10 &  & 10 & 10 \\ \hline
-5.1 & Elaboración del informe de avance& 15 &  &  &  \\ \hline
-5.2 & Evaluación de requerimientos & 25 &  &  &  \\ \hline
-5.3 & Elaboración de la memoria del proyecto & 30 &  &  &  \\ \hline
-5.4 & Preparación de la presentación final & 34 &  &  &  \\ \hline\end{tabular}%
+1.1 & Estudio sobre mantenimiento predictivo& S & I & P & C \\ \hline
+1.2 & Investigación sobre posibles sensores de corriente& P & I & S & C \\ \hline
+1.3 & Realizar el plan del proyecto& P & I & C & A \\ \hline
+2.1 & Selección de componentes& P & C & S & A \\ \hline
+2.2 & Diseño del circuito esquemático& P & I & C & A \\ \hline
+2.3 & Diseño del PCB & P & I & C & A \\ \hline
+2.4 & Fabricación y ensamblado del PCB & P & I & S & A \\ \hline
+2.5 & Pruebas y validación del hardware & P & I & C & I \\ \hline
+3.1 & Desarrollo de arquitectura del firmware  & P & C & I & C \\ \hline
+3.2 & Diseño de firmware & P & I & C & A \\ \hline
+3.3 & Análisis de riesgos de firmware & P & I & C & I \\ \hline
+3.4 & Desarrollo de pruebas para firmware & P & I & C & A \\ \hline
+3.5 & Programación del firmware & P & I & C & I \\ \hline
+3.6 & Verificación y validación del firmware & P & C & S & A \\ \hline
+4.1 & Integración de los módulos constitutivos & P & I & S & I \\ \hline
+4.2 & Pruebas de sensado & P & I & S & A \\ \hline
+4.3 & Pruebas de almacenamiento de datos& P & I & S & A \\ \hline
+4.4 & Pruebas de comunicación & P & I & S & A \\ \hline
+4.5 & Corrección de errores & P & C & S & I \\ \hline
+5.1 & Elaboración del informe de avance& P & A & I & I \\ \hline
+5.2 & Evaluación de requerimientos & P & C & I & A \\ \hline
+5.3 & Elaboración de la memoria del proyecto & P & A & I & I \\ \hline
+5.4 & Preparación de la presentación final & P & A & I & I \\ \hline\end{tabular}%
 }
 \end{table}
 
@@ -561,12 +555,6 @@ Referencias:
 \end{itemize}
 } %footnotesize
 
-Una de las columnas debe ser para el Director, ya que se supone que participará en el proyecto.
-A su vez se debe cuidar que no queden muchas tareas seguidas sin ``A'' o ``I''.
-
-Importante: es redundante poner ``I/A'' o ``I/C'', porque para aprobarlo o responder consultas primero la persona debe ser informada.
-
-\end{consigna}
 
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}

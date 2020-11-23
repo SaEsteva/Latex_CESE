@@ -91,7 +91,7 @@
 \usepackage[section]{placeins} % evita que los floats se pueden ubicar más allá de un \section{•}
 \usepackage[labelsep=period]{caption}
 \usepackage{longtable}
-
+\usepackage{subcaption}
 %\usepackage{tikz}
 %\usetikzlibrary{arrows, arrows.meta, calc, positioning, quotes, shapes}
 %\usepackage{array}
