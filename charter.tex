@@ -65,7 +65,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1.0      & Creación del documento                                          & 23/10/2020 \\ \hline
 1.1      & Desarrollo hasta sección 6 inclusive                            & 05/11/2020 \\ \hline
 1.2      & Correcciones e historias de usuario                            & 15/11/2020 \\ \hline
-      &                                                   &  \\ \hline
+1.3      & Desarrollo hasta sección 11 inclusive						 & 22/11/2020  \\ \hline
+1.4      & Correcciones y desarrollo final						 		& 27/11/2020  \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -181,7 +182,7 @@ El proyecto incluye los siguientes puntos:
 
 El proyecto no incluye los siguientes puntos:
 \begin{itemize}
-\item El diseño y construcción de packaging asociado para la distribución del producto.
+\item El diseño y construcción de \textit{packaging} asociado para la distribución del producto.
 \item El análisis de los datos recolectados y procesados.
 \end{itemize}
 
@@ -212,11 +213,10 @@ A continuación se listan los requerimientos en prioridad descendente:
 	\item El sistema deberá ser capaz de tomar muestras de los tres sensores de corriente en simultaneo al período de muestreo fijo.
 	\item El sistema deberá poseer una memoria no volátil para registrar datos como valores máximos, parámetros de calibración, etc. 
 	\item El sistema debe medir la temperatura ambiental de operación, rango de medición 0 - 50 centígrados.
-	\item El sistema incorporará diseño y elementos que aseguren bajo consumo de energía (requerimiento \ref{req1}).
-	\item Los indicadores de situación serán enviados mediante el protocolo de comunicación.
+	\item El sistema incorporará diseño y elementos que aseguren bajo consumo de energía (requerimiento 1.1).
+	\item Los indicadores de situación serán enviados a la plataforma \textit{teBox}.
 	\item El sistema deberá tomar muestras de los sensores externos con una tasa de muestreo de 1 kHz de frecuencia.
 	\item El sistema deberá contar con una resolución de 16 bits (15 bits + signo).
-	\item  
 	\end{enumerate}
 \item Grupo de requerimientos asociados a la comunicación de datos
 	\begin{enumerate}
@@ -559,87 +559,229 @@ Referencias:
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos)
+Riesgo 1: Daños en el prototipo
 \begin{itemize}
-\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de severidad (S).
-\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de (O). 
+\item Severidad (S): 10.\\
+El daño del prototipo puede darse a partir de la integración en cualquiera de las siguiente etapas lo cual conlleva a una perdida de tiempo y recursos para arreglarlo o en el peor de los casos producir otro prototipo.
+\item Probabilidad de ocurrencia (O): 4.\\
+El personal que manipula el prototipo tiene experiencia y capacidad para ello. 
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: Firmware inadecuado
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
+\item Severidad (S): 7.\\
+La planificación, elección e implementación errónea del firmware que no cubra los requerimientos iniciales genera una perdida de tiempo.
+\item Probabilidad de ocurrencia (O): 6.\\
+Poca experiencia en desarrollos de firmware similares. 
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: Pérdida total o parcial del código desarrollado
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
+\item Severidad (S): 9.\\
+Implicaría importantes retrasos en el desarrollo del trabajo dificultando el cumplimiento con la fecha de entrega.
+\item Probabilidad de ocurrencia (O): 1.\\
+Se utilizará durante toda la fase de desarrollo un sistema de control de versiones y \textit{backup} en la nube.
 \end{itemize}
 
+Riesgo 4: Retardos en la entrega de materiales
+\begin{itemize}
+\item Severidad (S): 4.\\
+Genera retardo en los plazos de entrega del proyecto.
+\item Probabilidad de ocurrencia (O): 2.\\
+Con la planificación previa se planifica los materiales a utilizar y se realiza la compra con antelación. 
+\end{itemize}
 
-b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
+Riesgo 5: Errores en el diseño del hardware 
+\begin{itemize}
+\item Severidad (S): 5.\\
+Presenta perdidas de tiempo y mayores gastos en la necesidad de un nuevo diseño.
+\item Probabilidad de ocurrencia (O): 3.\\
+El diseño de cada etapa se analiza y deben ser aprobados previo a la construcción. 
+\end{itemize}
 
-\begin{table}[htpb]
+b) Tabla de gestión de riesgos:  
+
+\begin{table}[H]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Daños en el prototipo	& 10  & 4  &   40  &  8  &  2  &  16    \\ \hline
+Firmware inadecuado	& 9  & 6  &   54  &  7  &  2  &   14   \\ \hline
+Pérdida total o parcial del código desarrollado	& 8  & 2  &   16  &    &    &      \\ \hline
+Retardos en la entrega de materiales	&  4 & 3  &  12   &    &    &      \\ \hline
+Errores en el diseño del hardware	& 5  & 3  &   15  &    &    &      \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 1: Se genera un protocolo para manipular el prototipo con todos los cuidados y dentro del proyecto se cotizan 2 prototipos funcionales.
+\begin{itemize}
+\item Severidad (S): 8.\\
+Sigue siendo severo pero al tener dos prototipos, el daño de uno de ellos baja este número.
+\item Probabilidad de ocurrencia (O): 2.\\
+Al agregar la planificación baja un punto la probabilidad. 
+\end{itemize}
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-
-\end{consigna}
+Riesgo 2: Se capacita al personal.
+\begin{itemize}
+\item Severidad (S): 7.\\
+Baja un punto pero sigue siendo alto ya que si ocurre representa una perdida de tiempo sumado a los gastos generados por las capacitaciones.
+\item Probabilidad de ocurrencia (O): 2.\\
+Luego de la capacitación se baja de forma considerable esta probabilidad. 
+\end{itemize}
 
 
 \section{13. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
 
-Verificación y validación:
+\begin{enumerate}
+\item Grupo de requerimientos asociados al sistema
+	\begin{enumerate}
+	\item La alimentación por cable debe ser de 5 V con un consumo máximo de 200 mA. \label{req1}
+		\begin{itemize}
+			\item Verificación: comprobar las hojas de datos de todos los componentes.  
+			\item Validación: se medirá el consumo total del prototipo.  
+		\end{itemize}
+	\item El sistema utilizará sensores disponibles comercialmente para la adquisición de la corriente y temperatura.
+		\begin{itemize}
+			\item Verificación: 
+			\item Validación: 
+		\end{itemize}
+	\item El sistema deberá ser capaz de tomar muestras de los tres sensores de corriente en simultaneo al período de muestreo fijo.
+		\begin{itemize}
+			\item Verificación: se verifica el código diseñado 
+			\item Validación: se deberá realizar las pruebas de laboratorio con los tres sensores conectados y el análisis de los datos registrados
+		\end{itemize}
+	\item El sistema deberá poseer una memoria no volátil para registrar datos como valores máximos, parámetros de calibración, etc. 
+		\begin{itemize}
+			\item Verificación: análisis de hojas de datos
+			\item Validación: prueba de escritura y lectura de datos
+		\end{itemize}
+	\item El sistema debe medir la temperatura ambiental de operación, rango de medición 0 - 50 centígrados.
+		\begin{itemize}
+			\item Verificación: consultar las hojas de datos de sensores de temperatura que cubran el rango necesario
+			\item Validación: se realiza una prueba de laboratorio para varias temperaturas
+		\end{itemize}
+	\item El sistema incorporará diseño y elementos que aseguren bajo consumo de energía (requerimiento 1.1).
+		\begin{itemize}
+			\item Verificación: corroborar en la hoja de datos 
+			\item Validación: medir el consumo en laboratorio de cada componente del hardware
+		\end{itemize}
+	\item Los indicadores de situación serán enviados a la plataforma \textit{teBox}.
+		\begin{itemize}
+			\item Verificación: se revisa el software
+			\item Validación: se hará una prueba de laboratorio 
+		\end{itemize}
+	\item El sistema deberá tomar muestras de los sensores externos con una tasa de muestreo de 1 kHz de frecuencia.
+		\begin{itemize}
+			\item Verificación: control del modulo de entradas y el ADC del microcontrolador
+			\item Validación: Primero se realizan pruebas del módulo hardware y luego se controla con el software los valores de lectura para varios puntos dentro del espectro 
+		\end{itemize}
+	\item El sistema deberá contar con una resolución de 16 bits (15 bits + signo).
+		\begin{itemize}
+			\item Verificación: lectura de hoja de datos del microcontrolador seleccionado
+			\item Validación: pruebas de resolucion para el ADC 
+		\end{itemize}
+	\end{enumerate}
+\item Grupo de requerimientos asociados a la comunicación de datos
+	\begin{enumerate}
+	\item El protocolo de comunicación está definido por la plataforma \textit{teBox}.
+		\begin{itemize}
+			\item Verificación: se revisa el protocolo en la etapa de diseño del software
+			\item Validación: pruebas de comunicación con el prototipo.
+		\end{itemize}
+	\item El sensor se comporta como esclavo y la plataforma \textit{teBox} como maestro.
+		\begin{itemize}
+			\item Verificación: revisar el código de comunicación desarrollado 
+			\item Validación: pruebas de comunicación con el prototipo y la plataforma 
+		\end{itemize}
+	\end{enumerate}
+\item Grupo de requerimientos asociados con el sensor de corriente
+	\begin{enumerate}
+	\item El sensor debe ser de efecto Hall.
+		\begin{itemize}
+			\item Verificación: control de la hoja de datos del sensor
+			\item Validación: prueba del sensor en el laboratorio
+		\end{itemize}
+	\item El sensor debe detectar corriente continua, alterna y de pulsos.
+		\begin{itemize}
+			\item Verificación: consulta con la hoja de datos y personal experto en el área
+			\item Validación: prueba de laboratorio para los tres casos de corriente 
+		\end{itemize}
+	\item El sensor debe ser de núcleo partido.
+		\begin{itemize}
+			\item Verificación: consulta en hoja de datos
+			\item Validación: comprobar el diseño al adquirirlo 
+		\end{itemize}
+	\item El sensor debe ser de bajo consumo (máximo 20 mA).
+		\begin{itemize}
+			\item Verificación: consulta en la hoja de datos
+			\item Validación: prueba de consumo máximo en laboratorio 
+		\end{itemize}
+	\end{enumerate}
+\item Grupo de requerimientos asociados a testing
+	\begin{enumerate}
+	\item Se deberá testear cada módulo del hardware en forma individual y luego en conjunto.
+		\begin{itemize}
+			\item Verificación: planificación en conjunto con el cliente de las pruebas 
+			\item Validación: probar en laboratorio con el orden predeterminado
+		\end{itemize}
+	\item Se deberán validar los requerimientos detallados en el informe especificación de requerimientos de software CORRIENTE-ER-0001.
+		\begin{itemize}
+			\item Verificación: informe
+			\item Validación: validación de los requerimientos detallados en el informe 
+		\end{itemize}
+	\item Luego de la integración de hardware y software se deben realizar pruebas de funcionamiento. Lectura de dato sensado, almacenamiento en memoria, comunicación con plataforma, etc.
+		\begin{itemize}
+			\item Verificación: planificar las pruebas a realizar en conjunto con el cliente 
+			\item Validación: pruebas de laboratorio y de campo 
+		\end{itemize}
+	\item Realizar la prueba integral del sistema en el caso de uso principal. 
+		\begin{itemize}
+			\item Verificación: definir las pruebas
+			\item Validación: pruebas iniciales en laboratorio y luego en campo 
+		\end{itemize}
+	\end{enumerate}
+\item Grupo de requerimientos asociados con la documentación
+	\begin{enumerate}
+	\item Se deberá generar una planificación completa del proyecto con los diferentes puntos a seguir durante el desarrollo del sensor.
+		\begin{itemize}
+			\item Verificación: consultar con director y docentes de la maestría 
+			\item Validación: aprobación por parte del director
+		\end{itemize}
+	\item Se utilizarán informes de avance dirigidos al cliente y director con la finalidad de controlar los puntos planificados.
+		\begin{itemize}
+			\item Verificación: consulta al cliente y director los períodos de avance 
+			\item Validación: aprobación de cliente y director
+		\end{itemize}
+	\item Se deberá confeccionar una memoria técnica para el proyecto.
+		\begin{itemize}
+			\item Verificación: consulta a los docentes de la maestría y director
+			\item Validación: corrección por parte de los docentes de la maestría
+		\end{itemize}
+	\item Se deberá confeccionar un manual de uso en lenguaje  sencillo dirigido a un lector que podrá no contar con conocimiento técnico.
+		\begin{itemize}
+			\item Verificación: consulta con personal técnico del cliente
+			\item Validación: corrección por parte del cliente
+		\end{itemize}
+	\item Se deberá confeccionar un manual de instalación.
+		\begin{itemize}
+			\item Verificación: consulta con personal técnico del cliente
+			\item Validación: corrección por parte del cliente
+		\end{itemize}
+	\end{enumerate}
+\end{enumerate}
 
-\begin{itemize}
-\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
-
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.
-
-\end{consigna}
 
 \section{14. Comunicación del proyecto}
 \label{sec:comunicaciones}
@@ -654,32 +796,21 @@ El plan de comunicación del proyecto es el siguiente:
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}PLAN DE COMUNICACIÓN DEL PROYECTO}           \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 ¿Qué comunicar? & Audiencia & Propósito & Frecuencia & Método de comunicac. & Responsable \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
+Definición de objetivos y alcances  &   \clientename , \supname        &    Evaluación    &     al inicio       &       email, reuniones               &     \authorname        \\ \hline
+Notificación de avances                &    \clientename , \supname       &  Tener informado a los involucrados &      semanal      &           email, reuniones           &      \authorname       \\ \hline
+Consultas técnicas                &      \clientename , \supname     & consultas para solucionar inconveniente&     semanal       &           email, reuniones           &      \authorname       \\ \hline
+Resultados de pruebas                &     \clientename , \supname      & informar los resultados &     mensual       &         email, reuniones             &       \authorname      \\ \hline
+Finalización y cierre                &    \supname       & Planificar la presentación del proyecto &     fin       &          email, reuniones            &        \authorname     \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{15. Gestión de compras}
 \label{sec:compras}
 
-\begin{consigna}{red}
-En caso de tener que comprar elementos o contratar servicios:
-a) Explique con qué criterios elegiría a un proveedor.
-b) Redacte el Statement of Work correspondiente.
-\end{consigna}
+La compra de componentes corre por parte del cliente.
 
 \section{16. Seguimiento y control}
 \label{sec:seguimiento}
-
-\begin{consigna}{red}
-Para cada tarea del proyecto establecer la frecuencia y los indicadores con los se seguirá su avance y quién será el responsable de hacer dicho seguimiento y a quién debe comunicarse la situación (en concordancia con el Plan de Comunicación del proyecto).
-
-El indicador de avance tiene que ser algo medible, mejor incluso si se puede medir en \% de avance. Por ejemplo,se pueden indicar en esta columna cosas como ``cantidad de conexiones ruteadeas'' o ``cantidad de funciones implementadas'', pero no algo genérico y ambiguo como ``\%'', porque el lector no sabe porcentaje de qué cosa.
-
-\end{consigna}
 
 \begin{longtable}{|m{1cm}|m{3.5cm}|m{2.2cm}|m{2cm}|m{3cm}|m{1.5cm}|}
 \hline
@@ -715,11 +846,15 @@ Tarea del WBS 			& Indicador de avance & Frecuencia de reporte & Resp. de seguim
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+1.1 - 1.2 - 1.3 & avance sobre el total & una vez & \authorname &\clientename, \supname & email \\ \hline
+2.1 & cantidad sobre el total & semanal mientras dure la tarea & \authorname &\clientename, \supname & email \\ \hline
+2.2 - 2.3 & avance sobre el total & semanal mientras dure la tarea   & \authorname &\clientename, \supname & email \\ \hline
+2.4 - 2.5 & cantidad sobre el total &  semanal mientras dure la tarea  &\authorname & \clientename, \supname & email \\ \hline
+3.1 - 3.2 - 3.3 - 3.4 - 3.5 - 3.6& avance sobre el total &  semanal mientras dure la tarea  & \authorname &\clientename, \supname & email \\ \hline
+4.1 & avance sobre el total &  semanal mientras dure la tarea  & \authorname &\clientename, \supname & email \\ \hline
+4.2 - 4.3 - 4.4 &cantidad sobre el total  &  semanal mientras dure la tarea  &\authorname & \clientename, \supname & email \\ \hline
+4.5 & avance sobre el total &  semanal mientras dure la tarea  & \authorname &\clientename, \supname & email \\ \hline
+5.1 -5.2 - 5.3 - 5.4& avance sobre el total &  mensual mientras dure la tarea  & \authorname &\clientename, \supname & email \\ \hline
 \end{tabularx}%
 %}
 \end{table}
@@ -727,19 +862,23 @@ Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimien
 \section{17. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-
 \begin{itemize}
 \item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+\begin{itemize}
+\item Responsable: \authorname
+\item Procedimiento: Se analizará el cumplimiento con los requerimientos y cronograma establecido. En el caso de hallar requerimientos incumplidos y/o retrasos en las tareas se evaluarán las causas y se propondrán acciones para evitarlo en futuros proyectos. Por otra parte se considerará si hubo riesgos no contemplados en la planificación inicial.
+\end{itemize} 
 \item Identificación de las técnicas y procedimientos útiles e inútiles que se utilizaron, y los problemas que surgieron y cómo se solucionaron:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-  - Indicar esto y quién financiará los gastos correspondientes.
+\begin{itemize}
+\item Responsable: \authorname
+\item Procedimiento: Se evaluarán los procedimientos utilizados en función a su utilidad y eficiencia para alcanzar los objetivos predefinidos. Se analizarán los problemas surgidos y las medidas paliativas
 \end{itemize}
-
-\end{consigna}
+\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
+\begin{itemize}
+\item Responsable: \authorname
+\item Procedimiento: Luego de defender el proyecto ante el jurado, se procederá a agradecer a todos los miembros del equipo, director del trabajo, miembros del jurado y autoridades del CESE.
+\end{itemize}
+\end{itemize}
 
 
 \end{document}
