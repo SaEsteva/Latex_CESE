@@ -32,9 +32,9 @@
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{23 de Octubre de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlanificacion{18 de Diciembre de 2020} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{19 de Octubre de 2021}		%Fecha de defensa pública del trabajo final
+\fechaINICIO{23 de octubre de 2020}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlanificacion{18 de diciembre de 2020} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{19 de octubre de 2021}		%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -83,7 +83,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un desarrollo de un sensor de corriente de tres fases capaz de medir, procesar e informar diversos parámetros necesarios para el mantenimiento predictivo en la industria, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un desarrollo de un sensor de corriente de tres fases capaz de medir, procesar e informar diversos parámetros necesarios para el mantenimiento predictivo en la industria, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -339,7 +339,7 @@ En la Figura \ref{fig:AoN} se observa el diagrama de \textit{Activity on Node} c
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
 
-En la figura \ref{fig:gantt} se muestra el diagrama de gantt correspondiente a las tareas detalladas en el cuadro. Se toma un calendario con 5 días laborales por semana y se estima un trabajo de veinte horas semanales dividido en cuatro horas diarias.
+En la figura \ref{fig:gantt} se muestra el diagrama de gantt correspondiente a las tareas detalladas en el cuadro \ref{tab:gantt}. Se toma un calendario con 5 días laborales por semana y se estima un trabajo de veinte horas semanales dividido en cuatro horas diarias.
 
 \begin{table}[htpb]
 \centering
@@ -347,36 +347,37 @@ En la figura \ref{fig:gantt} se muestra el diagrama de gantt correspondiente a l
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Tarea & Nombre & Duración & Inicio & Final & Predecesor \\ \hline
-1 & Análisis preliminar & 11 dias &  10/23/2020 & 10/30/2020 & \\ \hline
+1 & Análisis preliminar & 11 días &  10/23/2020 & 10/30/2020 & \\ \hline
 2 & Estudio sobre mantenimiento predictivo &  10 hs & 10/23/2020 & 	10/26/2020	 &\\ \hline
 3 & Investigación sobre posibles sensores de corriente &  10 hs & 10/23/2020 & 10/26/2020	 & \\ \hline
 4 & Realizar el plan del proyecto &  28 hs & 10/27/2020 & 	10/30/2020 & 2, 3 \\ \hline		
-5 & Hardware &  45.4 días & 11/04/2020 & 	12/04/2020 & 1\\ \hline
+5 & Hardware &  45,4 días & 11/04/2020 & 	12/04/2020 & 1\\ \hline
 6 & Selección de componentes &  12 hs & 11/04/2020 & 	11/05/2020 & 4\\ \hline
 7 & Diseño del circuito esquemático &  28 hs & 11/06/2020 & 	11/11/2020	 &6\\ \hline
 8 & Diseño del PCB &  30 hs & 11/16/2020 & 	11/19/2020 &7\\ \hline
 9 & Fabricación y ensamblado del PCB &  30 hs & 11/24/2020 & 	11/27/2020	 & 8\\ \hline
 10 & Pruebas y validación del hardware &  40 hs & 11/27/2020 & 	12/04/2020	 & 9	\\ \hline
-11 & Firmware &  38.5 días &11/05/2020	 & 12/02/2020 &  1\\ \hline
+11 & Firmware &  38,5 días &11/05/2020	 & 12/02/2020 &  1\\ \hline
 12 & Desarrollo de arquitectura del firmware &   16 hs & 11/05/2020 & 	11/06/2020 & 4\\ \hline
 13 & Diseño de firmware &  32 hs & 11/09/2020 & 	11/12/2020 & 12\\ \hline
 14 & Análisis de riesgos de firmware &  10 hs & 11/13/2020 & 	11/16/2020 & 13\\ \hline
 15 & Desarrollo de pruebas para firmware &  32 hs & 11/16/2020 & 	11/20/2020 & 14\\ \hline
 16 & Programación del firmware &  40 hs & 11/20/2020 & 	11/27/2020 & 15\\ \hline
 17 & Verificación y validación del firmware  & 24 hs &11/27/2020 & 	12/02/2020 & 16 \\ \hline
-18 & Integración &  24.25 dias & 12/04/2020 & 	12/22/2020 &5, 11\\ \hline
+18 & Integración &  24,25 días & 12/04/2020 & 	12/22/2020 &5, 11\\ \hline
 19 & Integración de los módulos constitutivos &  32 hs & 12/04/2020 & 	12/10/2020 & 10, 17\\ \hline
 20 & Pruebas de sensado &  30 hs & 12/10/2020 & 	12/16/2020 & 19\\ \hline
 21 & Pruebas de almacenamiento de datos & 30 hs & 12/10/2020 & 	12/16/2020 &19\\ \hline
 22 & Pruebas de comunicación & 30 hs & 12/10/2020 & 	12/16/2020 & 19\\ \hline
 23 & Corrección de errores &  35 hs & 12/16/2020 & 	12/22/2020 &20, 21, 22\\ \hline
-24 & Procesos finales &  77.75 días & 11/10/2020 & 	01/01/2021 & \\ \hline
+24 & Procesos finales &  77,75 días & 11/10/2020 & 	01/01/2021 & \\ \hline
 25 & Elaboración del informe de avance &  15 hs & 11/10/2020 & 	11/11/2020 & 4\\ \hline
 26 & Evaluación de requerimientos &  25 hs & 11/11/2020 & 	11/16/2020 & 4\\ \hline
 27 & Elaboración de la memoria del proyecto &  30 hs & 12/22/2020 & 	12/28/2020 & 23, 25, 26\\ \hline
 28 & Preparación de la presentación final &  34 hs &12/28/2020 & 	01/01/2021 &  27\\ 
 \hline
 \end{tabularx}%
+\caption{Tabla de diagrama de gantt}
 \label{tab:gantt}
 \end{table}
 
@@ -433,6 +434,7 @@ Tarea & Nombre & Duración & Inicio & Final & Predecesor \\ \hline
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
+El presupuesto se detalla en pesos Argentinos.
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
@@ -503,21 +505,35 @@ En la siguiente tabla se asignan las responsabilidades y el manejo de la autorid
 \rowcolor[HTML]{C0C0C0} 
 \cellcolor[HTML]{C0C0C0} &
   \cellcolor[HTML]{C0C0C0} &
-  \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto} \\ \cline{3-6} 
+  \cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} \\
 \rowcolor[HTML]{C0C0C0} 
 \cellcolor[HTML]{C0C0C0} &
   \cellcolor[HTML]{C0C0C0} &
-  Responsable &
-  Orientador &
-  Equipo &
-  Cliente \\ \cline{3-6} 
+  \multicolumn{4}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}Listar todos los nombres y roles del proyecto}} \\ \cline{3-6}
 \rowcolor[HTML]{C0C0C0} 
-\multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
-  \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
-  \authorname &
-  \supname &
-  Martín Mello Teggia &
-  \clientename \\ \hline
+\cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} \\
+\rowcolor[HTML]{C0C0C0} 
+\cellcolor[HTML]{C0C0C0} &
+  \cellcolor[HTML]{C0C0C0} &
+  \multirow{-2}{*}{Responsable} &
+  \multirow{-2}{*}{Orientador} &
+  \multirow{-2}{*}{Equipo} &
+  \multirow{-2}{*}{Cliente} \\ 
+\rowcolor[HTML]{C0C0C0} 
+\multirow{-5}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
+  \multirow{-5}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
+  \multirow{-2}{*}{\authorname} &
+  \multirow{-2}{*}{\supname} &
+  \multirow{-2}{*}{Martín Mello Teggia} &
+  \multirow{-2}{*}{\clientename} \\ \hline
 1.1 & Estudio sobre mantenimiento predictivo& S & I & P & C \\ \hline
 1.2 & Investigación sobre posibles sensores de corriente& P & I & S & C \\ \hline
 1.3 & Realizar el plan del proyecto& P & I & C & A \\ \hline
@@ -560,44 +576,44 @@ Referencias:
 \label{sec:riesgos}
 
  
-Riesgo 1: Daños en el prototipo
+Riesgo 1: daños en el prototipo
 \begin{itemize}
 \item Severidad (S): 10.\\
-El daño del prototipo puede darse a partir de la integración en cualquiera de las siguiente etapas lo cual conlleva a una perdida de tiempo y recursos para arreglarlo o en el peor de los casos producir otro prototipo.
+El daño del prototipo puede darse a partir de la integración en cualquiera de las siguiente etapas lo cual conlleva a una pérdida de tiempo y recursos para arreglarlo o en el peor de los casos a la necesidad de fabricar otro prototipo.
 \item Probabilidad de ocurrencia (O): 4.\\
 El personal que manipula el prototipo tiene experiencia y capacidad para ello. 
 \end{itemize}   
 
-Riesgo 2: Firmware inadecuado
+Riesgo 2: firmware inadecuado
 \begin{itemize}
 \item Severidad (S): 7.\\
-La planificación, elección e implementación errónea del firmware que no cubra los requerimientos iniciales genera una perdida de tiempo.
+La planificación, elección e implementación errónea del firmware que no cubra los requerimientos iniciales genera una pérdida de tiempo.
 \item Probabilidad de ocurrencia (O): 6.\\
 Poca experiencia en desarrollos de firmware similares. 
 \end{itemize}
 
-Riesgo 3: Pérdida total o parcial del código desarrollado
+Riesgo 3: pérdida total o parcial del código desarrollado
 \begin{itemize}
 \item Severidad (S): 9.\\
-Implicaría importantes retrasos en el desarrollo del trabajo dificultando el cumplimiento con la fecha de entrega.
+Implicaría importantes retrasos en el desarrollo del trabajo y dificultaría el cumplimiento de la fecha de entrega.
 \item Probabilidad de ocurrencia (O): 1.\\
 Se utilizará durante toda la fase de desarrollo un sistema de control de versiones y \textit{backup} en la nube.
 \end{itemize}
 
-Riesgo 4: Retardos en la entrega de materiales
+Riesgo 4: retardos en la entrega de materiales
 \begin{itemize}
 \item Severidad (S): 4.\\
 Genera retardo en los plazos de entrega del proyecto.
 \item Probabilidad de ocurrencia (O): 2.\\
-Con la planificación previa se planifica los materiales a utilizar y se realiza la compra con antelación. 
+En la planificación se contempla la compra anticipada de los materiales necesario.
 \end{itemize}
 
-Riesgo 5: Errores en el diseño del hardware 
+Riesgo 5: errores en el diseño del hardware 
 \begin{itemize}
 \item Severidad (S): 5.\\
-Presenta perdidas de tiempo y mayores gastos en la necesidad de un nuevo diseño.
+Presenta pérdidas de tiempo y mayores gastos en la necesidad de un nuevo diseño.
 \item Probabilidad de ocurrencia (O): 3.\\
-El diseño de cada etapa se analiza y deben ser aprobados previo a la construcción. 
+El diseño de cada etapa se analiza y debe ser aprobados previo a la construcción. 
 \end{itemize}
 
 b) Tabla de gestión de riesgos:  
@@ -623,7 +639,7 @@ Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplic
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: Se genera un protocolo para manipular el prototipo con todos los cuidados y dentro del proyecto se cotizan 2 prototipos funcionales.
+Riesgo 1: se genera un protocolo para manipular el prototipo con todos los cuidados y dentro del proyecto se cotizan 2 prototipos funcionales.
 \begin{itemize}
 \item Severidad (S): 8.\\
 Sigue siendo severo pero al tener dos prototipos, el daño de uno de ellos baja este número.
@@ -631,10 +647,10 @@ Sigue siendo severo pero al tener dos prototipos, el daño de uno de ellos baja 
 Al agregar la planificación baja un punto la probabilidad. 
 \end{itemize}
 
-Riesgo 2: Se capacita al personal.
+Riesgo 2: se capacita al personal.
 \begin{itemize}
 \item Severidad (S): 7.\\
-Baja un punto pero sigue siendo alto ya que si ocurre representa una perdida de tiempo sumado a los gastos generados por las capacitaciones.
+Baja un punto pero sigue siendo alto ya que si ocurre representa una pérdida de tiempo sumado a los gastos generados por las capacitaciones.
 \item Probabilidad de ocurrencia (O): 2.\\
 Luego de la capacitación se baja de forma considerable esta probabilidad. 
 \end{itemize}
